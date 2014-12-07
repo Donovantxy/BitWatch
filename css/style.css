@@ -1,0 +1,124 @@
+
+.thick0, .thick1{
+    width: 0;
+    height: 0;
+}
+
+.hthick0, .mthick0, .sthick0{
+    border-color: #CDCDCD;
+}
+.hthick1{
+    border-color: royalblue;
+}
+.mthick1{
+    border-color: dodgerblue;
+}
+.sthick1{
+    border-color: red;
+}
+
+.hours{
+    border-style: solid;
+    border-bottom-width: 0px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top-width: 120px;
+    float: left;
+    margin:0 30px;
+}
+.mins{
+    border-style: solid;
+    border-bottom-width: 0px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top-width: 80px;
+    float: left;
+    margin:-70px 20px 0;
+}
+.secs{
+    border-style: solid;
+    border-bottom-width: 0px;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-top-width: 40px;
+    float: left;
+    margin:-30px 20px 0;
+}
+
+#hour{
+    width: 310px;
+    height: 120px;
+    margin: 60px auto 0px;
+}
+
+li.hours:nth-child(1){
+    -ms-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+}
+li.hours:nth-child(2){
+    -ms-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+li.hours:nth-child(3){
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+li.hours:nth-child(4){
+    -ms-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
+
+
+#min{
+    width: 292px;
+    height: 80px;
+    margin: 0px auto 0;
+}
+
+#sec{
+    width: 292px;
+    height: 40px;
+    margin: -50px auto 0;
+}
+
+li.mins:nth-child(1), li.secs:nth-child(1){
+    -ms-transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+}
+
+li.mins:nth-child(2), li.secs:nth-child(2){
+    -ms-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+}
+
+li.mins:nth-child(3), li.secs:nth-child(3){
+    -ms-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+
+li.mins:nth-child(4), li.secs:nth-child(4){
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+
+li.mins:nth-child(5), li.secs:nth-child(5){
+    -ms-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
+
+li.mins:nth-child(6), li.secs:nth-child(6){
+    -ms-transform: rotate(25deg);
+    -webkit-transform: rotate(25deg);
+    transform: rotate(25deg);
+}
+
+

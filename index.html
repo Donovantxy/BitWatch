@@ -15,13 +15,30 @@
 
 <div ng-controller="BitWatch as bw">
 
-    <ul>
-        <li>{{bw.watch.hours}}</li>
-        <li>{{bw.watch.mins}}</li>
-        <li>{{bw.watch.secs}}</li>
+    <ul id="hour">
+        <li class="{{'hthick'+bw.watch.hours.substr(0,1)}} hours thick"></li>
+        <li class="{{'hthick'+bw.watch.hours.substr(1,1)}} hours thick"></li>
+        <li class="{{'hthick'+bw.watch.hours.substr(2,1)}} hours thick"></li>
+        <li class="{{'hthick'+bw.watch.hours.substr(3,1)}} hours thick"></li>
     </ul>
 
+    <ul id="min">
+        <li class="{{'mthick'+bw.watch.mins.substr(0,1)}} mins thick"></li>
+        <li class="{{'mthick'+bw.watch.mins.substr(1,1)}} mins thick"></li>
+        <li class="{{'mthick'+bw.watch.mins.substr(2,1)}} mins thick"></li>
+        <li class="{{'mthick'+bw.watch.mins.substr(3,1)}} mins thick"></li>
+        <li class="{{'mthick'+bw.watch.mins.substr(4,1)}} mins thick"></li>
+        <li class="{{'mthick'+bw.watch.mins.substr(5,1)}} mins thick"></li>
+    </ul>
 
+    <ul id="sec">
+        <li class="{{'sthick'+bw.watch.secs.substr(1,1)}} secs thick"></li>
+        <li class="{{'sthick'+bw.watch.secs.substr(0,1)}} secs thick"></li>
+        <li class="{{'sthick'+bw.watch.secs.substr(2,1)}} secs thick"></li>
+        <li class="{{'sthick'+bw.watch.secs.substr(3,1)}} secs thick"></li>
+        <li class="{{'sthick'+bw.watch.secs.substr(4,1)}} secs thick"></li>
+        <li class="{{'sthick'+bw.watch.secs.substr(5,1)}} secs thick"></li>
+    </ul>
 
 </div>
 
