@@ -29,7 +29,7 @@ function bitTime(){
     var self = this;
 
     var hours = date.getHours().toString(2);
-    self.hours = hours.length<4 ? "0000".substr(hours.length)+hours : hours;
+    self.hours = hours.length<5 ? "00000".substr(hours.length)+hours : hours;
 
     var mins = date.getMinutes().toString(2);
     self.mins = mins.length<6 ? "000000".substr(mins.length)+mins : mins;
@@ -43,7 +43,7 @@ function bitTime(){
         var date_updated = new Date();
 
         hours = date_updated.getHours().toString(2);
-        self.hours = hours.length<4 ? "0000".substr(hours.length)+hours : hours;
+        self.hours = hours.length<5 ? "00000".substr(hours.length)+hours : hours;
 
         var mins = date_updated.getMinutes().toString(2);
         self.mins = mins.length<6 ? "000000".substr(mins.length)+mins : mins;
