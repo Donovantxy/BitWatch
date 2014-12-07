@@ -3,34 +3,53 @@
  */
 
 angular.module("app", [])
-       .controller("BitWatch", BitWatch)
-       .factory("bitTime", bitTime);
+       .controller("BitWatch", ["$scope", "$interval", BitWatch])
+       .service("bitTime", bitTime);
 
 
-function BitWatch($scope){
+function BitWatch($scope, $interval){
     var self = this;
-    self.watch = bitTime();
-    //console.log(self, bt());
-    console.log(this, $scope);
+    self.watch = new bitTime();
+    $scope.secs = self.watch.secs;
+    $scope.$watch( "secs",
+        function(){
+            self.watch.update();
+            $scope.secs = self.watch.secs;
+            //console.log("chaged", self.watch.secs, $scope.secs);
+        }
+    );
+
+    $interval( function(){ self.watch.update(); $scope.secs = self.watch.secs; }, 1000 );
+
 }
 
 
 function bitTime(){
-    var bitT = {}
     var date = new Date();
+    var self = this;
 
     var hours = date.getHours().toString(2);
-    bitT.hours = hours.length<4 ? "0000".substr(hours.length)+hours : hours;
+    self.hours = hours.length<4 ? "0000".substr(hours.length)+hours : hours;
 
     var mins = date.getMinutes().toString(2);
-    bitT.mins = mins.length<6 ? "000000".substr(mins.length)+mins : mins;
+    self.mins = mins.length<6 ? "000000".substr(mins.length)+mins : mins;
 
     var secs = date.getSeconds().toString(2);
-    bitT.secs = secs.length<6 ? "000000".substr(secs.length)+secs : secs;
+    self.secs = secs.length<6 ? "000000".substr(secs.length)+secs : secs;
 
-    bitT.update = $setInterval(function(){
+    //return self;
 
-    }, 1000);
+    self.update = function(){
+        var date_updated = new Date();
 
-    return bitT; 
+        hours = date_updated.getHours().toString(2);
+        self.hours = hours.length<4 ? "0000".substr(hours.length)+hours : hours;
+
+        var mins = date_updated.getMinutes().toString(2);
+        self.mins = mins.length<6 ? "000000".substr(mins.length)+mins : mins;
+
+        var secs = date_updated.getSeconds().toString(2);
+        self.secs = secs.length<6 ? "000000".substr(secs.length)+secs : secs;
+    }
+
 }
